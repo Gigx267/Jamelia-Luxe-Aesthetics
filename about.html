@@ -6,6 +6,10 @@
     <title>About Us | Jamelia Luxe Aesthetics Abuja</title>
     <meta name="description" content="Learn more about Jamelia Luxe Aesthetics, premier medical aesthetics clinic in Wuse 2, Abuja. Discover our mission, expert practitioners, and commitment to natural beauty.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="p (1).jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="p (1).jpg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +39,7 @@
                             700: '#B0184B',
                             800: '#8A143D',
                             900: '#5E0B29',
+                            950: '#3D071B'
                         }
                     },
                     backgroundImage: {
@@ -46,6 +51,7 @@
             }
         }
     </script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -63,6 +69,19 @@
         }
         .animate-float { animation: floatSlow 6s ease-in-out infinite; }
         .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+
+        /* Animated Equalizer Sound Waves */
+        .equalizer-bar {
+            animation: equalize 1.2s ease-in-out infinite alternate;
+        }
+        .equalizer-bar:nth-child(1) { animation-delay: -0.4s; }
+        .equalizer-bar:nth-child(2) { animation-delay: -0.2s; }
+        .equalizer-bar:nth-child(3) { animation-delay: -0.6s; }
+
+        @keyframes equalize {
+            0% { height: 4px; }
+            100% { height: 16px; }
+        }
     </style>
 </head>
 <body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden">
@@ -73,7 +92,7 @@
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm transition-all duration-300">
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md z-40 border-b border-pink-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
             
             <!-- Brand Logo -->
@@ -90,7 +109,7 @@
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex space-x-8 text-sm font-semibold text-pink-900/80">
                 <a href="index.html" class="hover:text-pink-600 transition-colors">Home</a>
-                <a href="about.html" class="text-pink-600 font-bold">About Us</a>
+                <a href="about.html" class="text-pink-600 font-bold border-b-2 border-pink-600 pb-0.5">About Us</a>
                 <a href="services.html" class="hover:text-pink-600 transition-colors">Services</a>
                 <a href="care-guide.html" class="hover:text-pink-600 transition-colors">Care Guide</a>
                 <a href="contact.html" class="hover:text-pink-600 transition-colors">Location & Hours</a>
@@ -123,7 +142,7 @@
     </header>
 
     <!-- Page Header Hero -->
-    <section class="relative bg-pink-gradient py-16 lg:py-20 overflow-hidden">
+    <section class="relative bg-pink-gradient py-16 lg:py-24 overflow-hidden">
         <div class="absolute top-10 left-10 text-pink-300 opacity-60 text-4xl select-none animate-float">🦋</div>
         <div class="absolute bottom-10 right-12 text-pink-300 opacity-60 text-4xl select-none animate-float-reverse">✨</div>
 
@@ -150,31 +169,33 @@
             
             <!-- Left Image Block -->
             <div class="relative" data-aos="fade-right">
-                <div class="w-full h-[400px] lg:h-[480px] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative pink-glow">
-                    <img src="p (2).jpg" alt="Clinic Interior Abuja" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent"></div>
+                <div class="w-full h-[400px] lg:h-[480px] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative pink-glow group">
+                    <img src="p (2).jpg" alt="Clinic Interior Abuja" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-pink-900/30 via-transparent to-transparent"></div>
                 </div>
             </div>
 
             <!-- Right Text Content -->
             <div class="space-y-6" data-aos="fade-left">
-                <span class="text-pink-600 font-cursive text-3xl">Our Philosophy</span>
-                <h2 class="text-3xl lg:text-4xl font-serif font-bold text-pink-900">Empowering You Through Subtle, Sophisticated Enhancements</h2>
+                <div>
+                    <span class="text-pink-600 font-cursive text-3xl block">Our Philosophy</span>
+                    <h2 class="text-3xl lg:text-4xl font-serif font-bold text-pink-900 mt-1">Empowering You Through Subtle, Sophisticated Enhancements</h2>
+                </div>
                 <p class="text-stone-600 leading-relaxed text-sm lg:text-base">
-                    At **Jamelia Luxe Aesthetics**, we believe aesthetic medicine should never look overdone. Our tailored approach focuses on restoring your skin’s vitality, contouring harmonious features, and boosting your innate self-confidence.
+                    At <strong class="text-pink-900 font-semibold">Jamelia Luxe Aesthetics</strong>, we believe aesthetic medicine should never look overdone. Our tailored approach focuses on restoring your skin’s vitality, contouring harmonious features, and boosting your innate self-confidence.
                 </p>
                 <p class="text-stone-600 leading-relaxed text-sm lg:text-base">
                     Every procedure—from anti-wrinkle injections and targeted fat dissolving to customized dermal fillers—is performed under strict safety protocols in a clean, upscale, and welcoming clinical environment.
                 </p>
 
                 <div class="grid grid-cols-2 gap-4 pt-2">
-                    <div class="bg-white p-4 rounded-2xl border border-pink-100 shadow-sm">
+                    <div class="bg-white p-5 rounded-2xl border border-pink-100 shadow-sm hover:shadow-md transition-shadow">
                         <h4 class="text-pink-900 font-bold font-serif text-lg">Expert Care</h4>
-                        <p class="text-xs text-stone-500 mt-1">Skilled practitioners focused on safe, structured results.</p>
+                        <p class="text-xs text-stone-500 mt-1 leading-normal">Skilled practitioners focused on safe, structured results.</p>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl border border-pink-100 shadow-sm">
+                    <div class="bg-white p-5 rounded-2xl border border-pink-100 shadow-sm hover:shadow-md transition-shadow">
                         <h4 class="text-pink-900 font-bold font-serif text-lg">Premium Products</h4>
-                        <p class="text-xs text-stone-500 mt-1">Top-tier global aesthetic formulations and supplies.</p>
+                        <p class="text-xs text-stone-500 mt-1 leading-normal">Top-tier global aesthetic formulations and supplies.</p>
                     </div>
                 </div>
             </div>
@@ -192,25 +213,25 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
-                        <i data-lucide="shield-check"></i>
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-pink-900">Safety First</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">We maintain uncompromising hygiene, precise techniques, and comprehensive aftercare guidance for peace of mind.</p>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100">
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
-                        <i data-lucide="sparkles"></i>
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-pink-900">Natural Aesthetic</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">Our goal is to highlight your unique features so you look refreshed, never artificial or frozen.</p>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100">
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
-                        <i data-lucide="users"></i>
+                        <i data-lucide="users" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-pink-900">Personalized Touch</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">No two faces are alike. Every treatment plan is custom-tailored through an in-depth individual consultation.</p>
@@ -232,14 +253,46 @@
                 </div>
             </div>
             <div class="flex space-x-6 text-xs text-pink-300">
-                <a href="about.html" class="hover:text-white">About</a>
-                <a href="services.html" class="hover:text-white">Services</a>
-                <a href="care-guide.html" class="hover:text-white">Care Guide</a>
-                <a href="contact.html" class="hover:text-white">Contact</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="care-guide.html" class="hover:text-white transition-colors">Care Guide</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
             </div>
             <p class="text-xs text-pink-300">© 2026 Jamelia Luxe Aesthetics. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Floating Luxury Audio Player Widget -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <!-- Audio Source -->
+        <audio id="bgMusic" loop preload="metadata">
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/mpeg">
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/ogg">
+        </audio>
+
+        <!-- Floating Audio Control Button -->
+        <button id="musicToggleBtn" type="button" aria-label="Toggle Background Music" 
+            class="flex items-center gap-3 bg-white/90 backdrop-blur-md border border-pink-200/80 p-2 pr-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105 active:scale-95 text-pink-900">
+            
+            <!-- Play / Pause Icon Button -->
+            <div class="w-9 h-9 rounded-full bg-pink-gradient flex items-center justify-center text-pink-700 shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                <i id="musicIcon" data-lucide="music" class="w-4 h-4"></i>
+            </div>
+
+            <!-- Track Info & Equalizer -->
+            <div class="flex flex-col text-left">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-pink-800/60 leading-none">Ambient</span>
+                <span id="musicStatusText" class="text-xs font-semibold text-pink-950 mt-0.5">Play Sound</span>
+            </div>
+
+            <!-- Equalizer Sound Wave Animation -->
+            <div id="equalizer" class="hidden items-end gap-0.5 h-4 ml-1">
+                <span class="equalizer-bar w-1 bg-pink-600 rounded-full"></span>
+                <span class="equalizer-bar w-1 bg-pink-500 rounded-full"></span>
+                <span class="equalizer-bar w-1 bg-pink-700 rounded-full"></span>
+            </div>
+        </button>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -264,6 +317,38 @@
         }
 
         btn.addEventListener('click', toggleMenu);
+
+        // Background Music Player Controller
+        const audio = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicToggleBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        const statusText = document.getElementById('musicStatusText');
+        const equalizer = document.getElementById('equalizer');
+
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.setAttribute('data-lucide', 'music');
+                statusText.textContent = 'Play Sound';
+                equalizer.classList.add('hidden');
+                equalizer.classList.remove('flex');
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    musicIcon.setAttribute('data-lucide', 'pause');
+                    statusText.textContent = 'Pause';
+                    equalizer.classList.remove('hidden');
+                    equalizer.classList.add('flex');
+                    isPlaying = true;
+                }).catch(err => {
+                    console.warn("Audio playback was blocked by browser policy:", err);
+                });
+            }
+            // Refresh icons dynamically
+            lucide.createIcons();
+        });
     </script>
 </body>
 </html>
