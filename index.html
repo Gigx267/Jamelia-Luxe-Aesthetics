@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamelia Luxe Aesthetics | Premier Medical Clinic Wuse 2, Abuja</title>
+    <meta name="description" content="Elevate your natural beauty with premium non-surgical aesthetic treatments in Abuja. Botox, Dermal Fillers, Fat Dissolving, and Skin Rejuvenation in Wuse 2.">
+<!-- Standard SVG favicon (scalable, perfect for modern browsers) -->
+<link rel="icon" type="image/svg+xml" href="p (1).jpg">
+
+<!-- Fallback PNG for older desktop browsers -->
+<link rel="icon" type="image/png" sizes="32x32" href="p (1).jpg">
+
+<!-- Apple Touch Icon (for iOS home screen bookmarks) -->
+<link rel="apple-touch-icon" sizes="180x180" href="p (1).jpg">
+
+<!-- Web App Manifest (for Android / PWA support) -->
+<link rel="manifest" href="/site.webmanifest">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        pink: {
+                            50: '#FFF5F7',
+                            100: '#FDE8EE',
+                            200: '#FBCAD8',
+                            500: '#E65380',
+                            600: '#D12961',
+                            700: '#B0184B',
+                            800: '#8A143D',
+                            900: '#5E0B29',
+                        }
+                    },
+                    backgroundImage: {
+                        'pink-gradient': 'linear-gradient(135deg, #FDE8EE 0%, #FFF5F7 50%, #FBCAD8 100%)',
+                        'header-gradient': 'linear-gradient(135deg, #C21B5D 0%, #8A143D 100%)',
+                        'card-header': 'linear-gradient(90deg, #D12961 0%, #8A143D 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .pink-glow {
+            box-shadow: 0 10px 30px -5px rgba(209, 41, 97, 0.25);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(-4deg); }
+        }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden">
+
+    <!-- Background Music Player -->
+    <audio id="bgMusic" loop>
+        <source src="mm.mp3" type="audio/mpeg">
+        <source src="mmm.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-pink-900 text-pink-100 text-xs py-2.5 px-4 text-center font-medium tracking-wide border-b border-pink-800/50">
+        ✨ <span>51B Kumasi Crescent, Wuse 2, Abuja</span> &nbsp;|&nbsp; 📞 <a href="tel:+2347045524637" class="underline hover:text-white transition-colors">+234 704 552 4637</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-pink-300 flex items-center justify-center bg-pink-50 text-pink-700 font-serif font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+                    JL
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-cursive text-pink-700 font-bold leading-none">Jamelia</span>
+                    <span class="text-[9px] tracking-[0.3em] text-pink-800 uppercase font-semibold mt-0.5">Luxe Aesthetics</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-pink-900/80">
+                <a href="index.html" class="text-pink-600 font-bold">Home</a>
+                <a href="about.html" class="hover:text-pink-600 transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-pink-600 transition-colors">Services</a>
+                <a href="care-guide.html" class="hover:text-pink-600 transition-colors">Care Guide</a>
+                <a href="contact.html" class="hover:text-pink-600 transition-colors">Location & Hours</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:block">
+                <a href="#booking" class="bg-header-gradient text-white text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:opacity-95 hover:shadow-lg transition-all font-bold shadow-md hover:scale-105 inline-block">
+                    Book Consultation
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-xl text-pink-900 hover:bg-pink-100 transition-colors focus:outline-none">
+                <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-pink-100 px-6 pt-2 pb-6 space-y-4 transition-all duration-300">
+            <a href="index.html" class="block text-pink-600 font-bold text-base border-b border-pink-50 pb-2">Home</a>
+            <a href="about.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">About Us</a>
+            <a href="services.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Services & Treatments</a>
+            <a href="care-guide.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Care Guide</a>
+            <a href="contact.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Contact & Hours</a>
+            <a href="#booking" onclick="toggleMenu()" class="block text-center bg-header-gradient text-white text-xs uppercase tracking-wider py-3.5 rounded-full font-bold shadow-md">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-pink-gradient py-16 lg:py-24 overflow-hidden">
+        <div class="absolute top-10 left-10 text-pink-300 opacity-60 text-4xl select-none animate-float">🦋</div>
+        <div class="absolute bottom-10 right-12 text-pink-300 opacity-60 text-4xl select-none animate-float-reverse">✨</div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 bg-white/80 border border-pink-200 px-4 py-1.5 rounded-full text-xs font-bold text-pink-700 shadow-sm backdrop-blur-sm">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-600"></i>
+                        <span>Medical Aesthetics & Non-Surgical Clinic</span>
+                    </div>
+                </div>
+                
+                <h1 data-aos="fade-right" data-aos-delay="100" class="text-4xl lg:text-6xl font-serif font-bold text-pink-900 leading-tight">
+                    Natural, Beautiful <br>
+                    <span class="font-cursive text-5xl lg:text-7xl text-pink-600 font-normal capitalize">Confidence Results.</span>
+                </h1>
+                
+                <p data-aos="fade-right" data-aos-delay="200" class="text-stone-600 text-base lg:text-lg leading-relaxed max-w-xl">
+                    Relax facial muscles, smooth fine lines, restore skin vitality, and sculpt your ideal profile with tailored non-surgical procedures in Wuse 2, Abuja.
+                </p>
+
+                <div data-aos="fade-right" data-aos-delay="300" class="flex flex-wrap gap-4 pt-2">
+                    <a href="#booking" class="bg-header-gradient text-white px-8 py-4 rounded-full text-sm font-bold shadow-lg hover:shadow-pink-300 hover:scale-[1.03] transition-all flex items-center gap-2">
+                        <span>Book Appointment</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="services.html" class="bg-white border-2 border-pink-200 text-pink-800 px-8 py-4 rounded-full text-sm font-bold hover:bg-pink-50 transition-all shadow-sm hover:scale-[1.03]">
+                        Explore Treatments
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative" data-aos="fade-left" data-aos-delay="200">
+                <div class="w-full h-[420px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative pink-glow">
+                    <img src="p (4).jpg" alt="Jamelia Luxe Clinic Interior" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-pink-900/30 via-transparent to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Overview -->
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+            <span class="text-pink-600 font-cursive text-3xl">Tailored Beauty</span>
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-pink-900">Our Signature Treatments</h2>
+            <p class="text-stone-600">Customized, non-surgical enhancements designed to leave you refreshed with minimal downtime.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Anti-Wrinkle Treatments</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Relax facial muscles to smooth fine lines and prevent new wrinkles from forming.</p>
+                </div>
+                <a href="services.html" class="text-xs font-bold text-pink-700 flex items-center gap-1 hover:gap-2 transition-all pt-4">Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
+                        <i data-lucide="droplet"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Fat Dissolving</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Target stubborn localized fat deposits for a sleek, contoured jawline and profile.</p>
+                </div>
+                <a href="services.html" class="text-xs font-bold text-pink-700 flex items-center gap-1 hover:gap-2 transition-all pt-4">Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-3xl p-8 space-y-4 shadow-md border border-pink-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700">
+                        <i data-lucide="eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Tear Trough Fillers</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Brighten under-eyes and fill hollows to restore a rested, youthful appearance.</p>
+                </div>
+                <a href="services.html" class="text-xs font-bold text-pink-700 flex items-center gap-1 hover:gap-2 transition-all pt-4">Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="booking" class="bg-pink-gradient py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div data-aos="zoom-in" class="bg-white p-8 lg:p-10 rounded-3xl shadow-xl border border-pink-200 pink-glow">
+                <h2 class="text-3xl font-serif font-bold text-pink-900 text-center mb-2">Book Your Appointment</h2>
+                <p class="text-xs text-stone-500 text-center mb-8">Fill out your details below and our team will contact you promptly to schedule your consultation.</p>
+                
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Appointment requested! Our team will reach out to you shortly.');">
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Full Name</label>
+                        <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Phone / WhatsApp</label>
+                        <input type="tel" required placeholder="+234..." class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Select Treatment</label>
+                        <select class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30 text-stone-700">
+                            <option>Anti-Wrinkle Treatment</option>
+                            <option>Fat Dissolving (Lemon Bottle)</option>
+                            <option>Tear Trough Filler</option>
+                            <option>Lip / Dermal Fillers</option>
+                            <option>General Aesthetic Consultation</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-header-gradient text-white py-4 rounded-xl text-xs font-bold uppercase tracking-widest hover:opacity-95 transition-all shadow-md">
+                        Request Appointment Slot
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-pink-200 py-12 border-t border-pink-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-pink-400/40 flex items-center justify-center bg-pink-800 text-white font-serif font-bold text-sm">
+                    JL
+                </div>
+                <div>
+                    <p class="text-xl font-cursive text-white leading-none">Jamelia Luxe Aesthetics</p>
+                    <p class="text-[10px] uppercase tracking-widest text-pink-300">Natural, Beautiful Results</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 text-xs text-pink-300">
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="care-guide.html" class="hover:text-white">Care Guide</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-xs text-pink-300">© 2026 Jamelia Luxe Aesthetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80,
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Functionality
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+        }
+        btn.addEventListener('click', toggleMenu);
+
+        // Background Audio Handling
+        window.addEventListener('load', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    createMusicControls();
+                });
+            }
+        });
+
+        function createMusicControls() {
+            if (document.getElementById('music-controls')) return;
+
+            const musicControls = document.createElement('div');
+            musicControls.id = 'music-controls';
+            musicControls.innerHTML = `
+                <button id="playMusicBtn" class="bg-pink-900 text-pink-100 text-xs py-2 px-3 rounded border border-pink-400 mr-2 hover:bg-pink-800">▶ Play Audio</button>
+                <button id="muteMusicBtn" class="text-pink-300 text-xs hover:text-white">Close</button>
+            `;
+            musicControls.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(94, 11, 41, 0.95);
+                padding: 10px 14px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+            `;
+            
+            document.body.appendChild(musicControls);
+            
+            document.getElementById('playMusicBtn').addEventListener('click', function() {
+                document.getElementById('bgMusic').play();
+                musicControls.style.display = 'none';
+            });
+            
+            document.getElementById('muteMusicBtn').addEventListener('click', function() {
+                musicControls.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

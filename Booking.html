@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation | Jamelia Luxe Aesthetics Abuja</title>
+    <meta name="description" content="Book your aesthetic treatment or consultation at Jamelia Luxe Aesthetics in Wuse 2, Abuja. Choose your service, preferred date, and submit your request.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        pink: {
+                            50: '#FFF5F7',
+                            100: '#FDE8EE',
+                            200: '#FBCAD8',
+                            500: '#E65380',
+                            600: '#D12961',
+                            700: '#B0184B',
+                            800: '#8A143D',
+                            900: '#5E0B29',
+                        }
+                    },
+                    backgroundImage: {
+                        'pink-gradient': 'linear-gradient(135deg, #FDE8EE 0%, #FFF5F7 50%, #FBCAD8 100%)',
+                        'header-gradient': 'linear-gradient(135deg, #C21B5D 0%, #8A143D 100%)',
+                        'card-header': 'linear-gradient(90deg, #D12961 0%, #8A143D 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .pink-glow {
+            box-shadow: 0 10px 30px -5px rgba(209, 41, 97, 0.25);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(-4deg); }
+        }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-pink-900 text-pink-100 text-xs py-2.5 px-4 text-center font-medium tracking-wide border-b border-pink-800/50">
+        ✨ <span>51B Kumasi Crescent, Wuse 2, Abuja</span> &nbsp;|&nbsp; 📞 <a href="tel:+2347045524637" class="underline hover:text-white transition-colors">+234 704 552 4637</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-pink-300 flex items-center justify-center bg-pink-50 text-pink-700 font-serif font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+                    JL
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-cursive text-pink-700 font-bold leading-none">Jamelia</span>
+                    <span class="text-[9px] tracking-[0.3em] text-pink-800 uppercase font-semibold mt-0.5">Luxe Aesthetics</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-pink-900/80">
+                <a href="index.html" class="hover:text-pink-600 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-pink-600 transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-pink-600 transition-colors">Services</a>
+                <a href="care-guide.html" class="hover:text-pink-600 transition-colors">Care Guide</a>
+                <a href="contact.html" class="hover:text-pink-600 transition-colors">Location & Hours</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:block">
+                <a href="booking.html" class="bg-header-gradient text-white text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:opacity-95 hover:shadow-lg transition-all font-bold shadow-md hover:scale-105 inline-block">
+                    Book Consultation
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-xl text-pink-900 hover:bg-pink-100 transition-colors focus:outline-none">
+                <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-pink-100 px-6 pt-2 pb-6 space-y-4 transition-all duration-300">
+            <a href="index.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Home</a>
+            <a href="about.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">About Us</a>
+            <a href="services.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Services & Treatments</a>
+            <a href="care-guide.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Care Guide</a>
+            <a href="contact.html" class="block text-pink-900/80 hover:text-pink-600 font-semibold text-base border-b border-pink-50 pb-2">Contact & Hours</a>
+            <a href="booking.html" onclick="toggleMenu()" class="block text-center bg-header-gradient text-white text-xs uppercase tracking-wider py-3.5 rounded-full font-bold shadow-md">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <!-- Page Header Hero -->
+    <section class="relative bg-pink-gradient py-16 lg:py-20 overflow-hidden">
+        <div class="absolute top-10 left-10 text-pink-300 opacity-60 text-4xl select-none animate-float">📅</div>
+        <div class="absolute bottom-10 right-12 text-pink-300 opacity-60 text-4xl select-none animate-float-reverse">✨</div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-4 relative z-10">
+            <div data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 bg-white/80 border border-pink-200 px-4 py-1.5 rounded-full text-xs font-bold text-pink-700 shadow-sm backdrop-blur-sm">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-pink-600"></i>
+                    Seamless Appointment Booking
+                </div>
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl lg:text-5xl font-serif font-bold text-pink-900 leading-tight">
+                Schedule Your <br>
+                <span class="font-cursive text-5xl lg:text-6xl text-pink-600 font-normal capitalize">Personalized Consultation.</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200" class="text-stone-600 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+                Take the first step toward enhancing your natural radiance. Select your treatment and reserve your appointment slot with our specialist team in Wuse 2, Abuja.
+            </p>
+        </div>
+    </section>
+
+    <!-- Booking Main Section -->
+    <section class="py-16 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+            
+            <!-- Left Info Panel -->
+            <div class="space-y-6 lg:col-span-1" data-aos="fade-right">
+                <div class="bg-white p-8 rounded-3xl border border-pink-100 shadow-md space-y-6">
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Why Book With Us?</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 shrink-0 mt-1">
+                                <i data-lucide="user-check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-pink-900">Expert Practitioner Care</h4>
+                                <p class="text-xs text-stone-600 mt-0.5">Custom facial mapping and dedicated individual attention.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 shrink-0 mt-1">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-pink-900">Strict Safety Protocols</h4>
+                                <p class="text-xs text-stone-600 mt-0.5">Medical-grade hygiene standards using authentic luxury formulations.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 shrink-0 mt-1">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-pink-900">Convenient Location</h4>
+                                <p class="text-xs text-stone-600 mt-0.5">Located in central Wuse 2, Abuja with easy parking & access.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-pink-50 rounded-2xl border border-pink-100 text-xs text-stone-600 space-y-2">
+                        <p class="font-bold text-pink-900 flex items-center gap-1.5">
+                            <i data-lucide="info" class="w-4 h-4 text-pink-600"></i> Need Immediate Assistance?
+                        </p>
+                        <p>Call or message us directly on WhatsApp for urgent appointment requests.</p>
+                        <a href="https://wa.me/2347045524637" target="_blank" class="inline-flex items-center gap-1.5 text-pink-700 font-bold hover:underline">
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chat +234 704 552 4637
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="lg:col-span-2" data-aos="fade-left">
+                <div class="bg-white p-8 lg:p-10 rounded-3xl shadow-lg border border-pink-100 space-y-6">
+                    <div>
+                        <span class="text-pink-600 font-cursive text-3xl">Reservation</span>
+                        <h2 class="text-3xl font-serif font-bold text-pink-900 mt-1">Book Your Appointment</h2>
+                        <p class="text-stone-600 text-xs lg:text-sm mt-1">Fill in your details below to request a session. Our team will contact you to confirm your slot.</p>
+                    </div>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <!-- Step 1: Personal Info -->
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-pink-800 uppercase tracking-wider border-b border-pink-100 pb-2">1. Patient Information</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">First Name *</label>
+                                    <input type="text" placeholder="e.g. Zainab" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Last Name *</label>
+                                    <input type="text" placeholder="e.g. Ahmed" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Phone Number (WhatsApp) *</label>
+                                    <input type="tel" placeholder="+234..." required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Email Address *</label>
+                                    <input type="email" placeholder="example@domain.com" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Treatment & Date -->
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-pink-800 uppercase tracking-wider border-b border-pink-100 pb-2">2. Treatment Details</h3>
+                            
+                            <div>
+                                <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Select Primary Treatment *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm text-stone-700">
+                                    <option value="">-- Choose Treatment --</option>
+                                    <option value="consultation">Initial Aesthetic Consultation</option>
+                                    <option value="anti-wrinkle">Anti-Wrinkle Micro-Injections</option>
+                                    <option value="dermal-fillers">Dermal Fillers (Lips / Cheeks / Jawline)</option>
+                                    <option value="skin-boosters">Skin Boosters & Deep Hydration</option>
+                                    <option value="fat-dissolving">Fat Dissolving Injections</option>
+                                    <option value="microneedling">Advanced Microneedling</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Preferred Date *</label>
+                                    <input type="date" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm text-stone-700">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Preferred Time Window *</label>
+                                    <select required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm text-stone-700">
+                                        <option value="">-- Select Time --</option>
+                                        <option value="morning">Morning (10:00 AM – 1:00 PM)</option>
+                                        <option value="afternoon">Afternoon (1:00 PM – 4:00 PM)</option>
+                                        <option value="late-afternoon">Late Afternoon (4:00 PM – 6:00 PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Additional Notes -->
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-pink-800 uppercase tracking-wider border-b border-pink-100 pb-2">3. Additional Information</h3>
+                            <div>
+                                <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Specific Concerns or Questions</label>
+                                <textarea rows="3" placeholder="Tell us about your aesthetic goals, any previous treatments, or allergies..." class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-600 bg-pink-50/30 text-sm"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-header-gradient text-white text-xs uppercase tracking-wider py-4 rounded-full font-bold shadow-md hover:opacity-95 transition-all hover:scale-[1.01] flex items-center justify-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                            Submit Booking Request
+                        </button>
+
+                        <p class="text-[11px] text-stone-500 text-center">
+                            By submitting, you agree to receive follow-up appointment confirmation via phone or WhatsApp.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-pink-200 py-12 border-t border-pink-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-pink-400/40 flex items-center justify-center bg-pink-800 text-white font-serif font-bold text-sm">
+                    JL
+                </div>
+                <div>
+                    <p class="text-xl font-cursive text-white leading-none">Jamelia Luxe Aesthetics</p>
+                    <p class="text-[10px] uppercase tracking-widest text-pink-300">Natural, Beautiful Results</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 text-xs text-pink-300">
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="care-guide.html" class="hover:text-white">Care Guide</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-xs text-pink-300">© 2026 Jamelia Luxe Aesthetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80,
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Functionality
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+        }
+
+        btn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

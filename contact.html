@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamelia Luxe Aesthetics | Medical Aesthetics Clinic Abuja</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        pink: {
+                            50: '#FFF5F7',
+                            100: '#FDE8EE',
+                            200: '#FBCAD8',
+                            500: '#E65380',
+                            600: '#D12961',
+                            700: '#B0184B',
+                            800: '#8A143D',
+                            900: '#5E0B29',
+                        },
+                        magenta: '#C21B5D',
+                    },
+                    backgroundImage: {
+                        'pink-gradient': 'linear-gradient(135deg, #FDE8EE 0%, #FFF5F7 50%, #FBCAD8 100%)',
+                        'header-gradient': 'linear-gradient(135deg, #C21B5D 0%, #8A143D 100%)',
+                        'card-header': 'linear-gradient(90deg, #D12961 0%, #8A143D 100%)',
+                        'badge-gradient': 'linear-gradient(135deg, #D12961 0%, #8A143D 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Glamour Touches */
+        .pink-glow {
+            box-shadow: 0 10px 30px -5px rgba(209, 41, 97, 0.25);
+        }
+        .text-gradient-pink {
+            background: linear-gradient(135deg, #C21B5D 0%, #8A143D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-pink-900 text-pink-100 text-xs py-2.5 px-4 text-center font-medium tracking-wide border-b border-pink-800/50">
+        ✨ <span>51B Kumasi Crescent, Wuse 2, Abuja</span> &nbsp;|&nbsp; 📞 <a href="tel:+2347045524637" class="underline hover:text-white transition-colors">+234 704 552 4637</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 bg-white/80 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
+            <!-- Brand Logo matching Flyer Crest Style -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-pink-300 flex items-center justify-center bg-pink-50 text-pink-700 font-serif font-bold text-sm shadow-sm">
+                    JL
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-cursive text-pink-700 font-bold leading-none">Jamelia</span>
+                    <span class="text-[9px] tracking-[0.3em] text-pink-800 uppercase font-semibold mt-0.5">Luxe Aesthetics</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-pink-900/80">
+                <a href="#services" class="hover:text-pink-600 transition-colors">Services</a>
+                <a href="#pre-post" class="hover:text-pink-600 transition-colors">Care Guide</a>
+                <a href="#contact" class="hover:text-pink-600 transition-colors">Location & Hours</a>
+            </nav>
+
+            <a href="#booking" class="bg-header-gradient text-white text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:opacity-95 transition-all font-bold shadow-md hover:shadow-lg">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-pink-gradient py-16 lg:py-24 overflow-hidden">
+        <!-- Floating Glamour Accents -->
+        <div class="absolute top-10 left-10 text-pink-300 opacity-60 text-4xl select-none">🦋</div>
+        <div class="absolute bottom-10 right-12 text-pink-300 opacity-60 text-4xl select-none">✨</div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 bg-white/80 border border-pink-200 px-4 py-1.5 rounded-full text-xs font-bold text-pink-700 shadow-sm backdrop-blur-sm">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-600"></i>
+                    Medical Aesthetics & Non-Surgical Clinic
+                </div>
+                
+                <h1 class="text-4xl lg:text-6xl font-serif font-bold text-pink-900 leading-tight">
+                    Natural, Beautiful <br>
+                    <span class="font-cursive text-5xl lg:text-7xl text-pink-600 font-normal capitalize">Confidence Results.</span>
+                </h1>
+                
+                <p class="text-stone-600 text-base lg:text-lg leading-relaxed max-w-xl">
+                    Relax facial muscles, smooth fine lines, restore skin vitality, and sculpt your ideal look with tailored non-surgical procedures in Wuse 2, Abuja.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#booking" class="bg-header-gradient text-white px-8 py-4 rounded-full text-sm font-bold shadow-lg hover:shadow-pink-300 hover:scale-[1.02] transition-all flex items-center gap-2">
+                        <span>Book Appointment</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#services" class="bg-white border-2 border-pink-200 text-pink-800 px-8 py-4 rounded-full text-sm font-bold hover:bg-pink-50 transition-all shadow-sm">
+                        Explore Treatments
+                    </a>
+                </div>
+
+                <!-- Trust Badges Bar (Matching bottom of flyer) -->
+                <div class="pt-6 border-t border-pink-200/80 flex flex-wrap gap-4 text-xs font-semibold text-pink-800">
+                    <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-pink-600"></i> Safe & Professional</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-4 h-4 text-pink-600"></i> Premium Products</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="heart" class="w-4 h-4 text-pink-600"></i> Natural Results</span>
+                </div>
+            </div>
+
+            <!-- Hero Image Wrapper with Luxury Badge -->
+            <div class="relative">
+                <div class="w-full h-[450px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative pink-glow">
+                    <img src="p (4).jpg" alt="Jamelia Luxe Clinic" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 via-transparent to-transparent"></div>
+                </div>
+
+                <!-- Circular DM / Book Badge (Matching Flyer) -->
+                <a href="https://instagram.com/jamelia_aesthetics" target="_blank" class="absolute -bottom-6 -left-6 bg-header-gradient text-white rounded-full w-28 h-28 flex flex-col items-center justify-center text-center p-2 shadow-xl border-4 border-white hover:scale-105 transition-transform">
+                    <span class="text-xs font-bold leading-tight uppercase tracking-wider">DM TO<br>BOOK</span>
+                    <i data-lucide="heart" class="w-4 h-4 mt-1 fill-white"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-pink-600 font-cursive text-3xl">Tailored Beauty</span>
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-pink-900">Our Signature Treatments</h2>
+            <p class="text-stone-600">Customized, non-surgical enhancements designed to leave you refreshed with minimal downtime.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1: Anti-Wrinkle (Featured) -->
+            <div class="bg-white rounded-3xl p-8 space-y-6 shadow-md hover:shadow-xl transition-all border border-pink-100 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-2 bg-header-gradient"></div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700 shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Anti-Wrinkle Treatment</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Relax facial muscles to smooth out fine lines and wrinkles (forehead, crow's feet, frown lines) and prevent new ones from forming.
+                    </p>
+                </div>
+                <ul class="text-xs text-pink-800 space-y-2 pt-4 border-t border-pink-100 font-medium">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Target: Forehead, Crow's feet, Frowns</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Downtime: Zero downtime</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white rounded-3xl p-8 space-y-6 shadow-md hover:shadow-xl transition-all border border-pink-100 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-2 bg-header-gradient"></div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700 shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <i data-lucide="droplet"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Lemon Bottle Fat Dissolving</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Target stubborn localized fat deposits for a sculpted profile. Highly effective for double chin, jawline, abdomen, and love handles.
+                    </p>
+                </div>
+                <ul class="text-xs text-pink-800 space-y-2 pt-4 border-t border-pink-100 font-medium">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Target: Double Chin, Arms, Belly</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Downtime: Minimal</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white rounded-3xl p-8 space-y-6 shadow-md hover:shadow-xl transition-all border border-pink-100 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-2 bg-header-gradient"></div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-700 shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <i data-lucide="eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-pink-900">Tear Trough Filler</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Brighten tired under-eyes and correct hollows or dark circles to achieve a rested, youthful, and naturally rejuvenated expression.
+                    </p>
+                </div>
+                <ul class="text-xs text-pink-800 space-y-2 pt-4 border-t border-pink-100 font-medium">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Target: Under-eye hollows</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-pink-600"></i> Downtime: Minimal</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="mt-12 flex flex-wrap justify-center gap-3 text-xs font-bold text-pink-800">
+            <span class="bg-pink-100/70 border border-pink-200 px-5 py-2.5 rounded-full shadow-sm">Lip Fillers</span>
+            <span class="bg-pink-100/70 border border-pink-200 px-5 py-2.5 rounded-full shadow-sm">Dermal Fillers</span>
+            <span class="bg-pink-100/70 border border-pink-200 px-5 py-2.5 rounded-full shadow-sm">Skin Rejuvenation</span>
+            <span class="bg-pink-100/70 border border-pink-200 px-5 py-2.5 rounded-full shadow-sm">Bum Enhancement</span>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Pre & Post Treatment Care Guide (Directly Matched from Flyer) -->
+    <section id="pre-post" class="py-16 bg-white border-y border-pink-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-pink-600 font-cursive text-3xl">Essential Care</span>
+                <h2 class="text-3xl font-serif font-bold text-pink-900">Treatment Guidelines</h2>
+            </div>
+
+            <!-- Two Column Card Matching Flyer Layout -->
+            <div class="bg-pink-50 border-2 border-pink-200 rounded-3xl overflow-hidden shadow-lg">
+                <div class="bg-card-header text-white grid grid-cols-2 text-center text-xs lg:text-sm font-serif font-bold tracking-wider uppercase">
+                    <div class="py-4 border-r border-pink-400/40">Pre-Treatment</div>
+                    <div class="py-4">Post-Treatment</div>
+                </div>
+
+                <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-pink-200 p-6 lg:p-8">
+                    <!-- Pre Treatment List -->
+                    <div class="space-y-6 pr-0 md:pr-6 pb-6 md:pb-0">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">🍷</div>
+                            <p class="text-sm text-stone-700 font-medium">Avoid alcohol, coffee & blood thinners for 24 hours prior.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">🏋️‍♀️</div>
+                            <p class="text-sm text-stone-700 font-medium">Skip intense exercise 24 hours prior to treatment.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">✨</div>
+                            <p class="text-sm text-stone-700 font-medium">Arrive with a clean, makeup-free face.</p>
+                        </div>
+                    </div>
+
+                    <!-- Post Treatment List -->
+                    <div class="space-y-6 pl-0 md:pl-6 pt-6 md:pt-0">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">✋</div>
+                            <p class="text-sm text-stone-700 font-medium">Avoid touching or massaging the treated area for 24 hours.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">⏰</div>
+                            <p class="text-sm text-stone-700 font-medium">Stay upright for 4 hours post-treatment.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-pink-200 flex items-center justify-center text-pink-700 shrink-0 shadow-sm">☀️</div>
+                            <p class="text-sm text-stone-700 font-medium">Avoid strenuous exercise and heat exposure for 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Booking Section -->
+    <section id="contact" class="bg-pink-gradient py-20">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Information Cards Matching Flyer Containers -->
+            <div class="space-y-6">
+                <div>
+                    <span class="text-pink-600 font-cursive text-3xl">Find Us</span>
+                    <h2 class="text-3xl font-serif font-bold text-pink-900">Visit Our Clinic in Abuja</h2>
+                    <p class="text-stone-600 mt-2">Experience luxury aesthetic treatments in a calm, discreet environment.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Location Card -->
+                    <div class="bg-white p-5 rounded-2xl border border-pink-200 flex items-center gap-4 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-pink-700 shrink-0">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase font-bold text-pink-800 tracking-wider">Address</p>
+                            <p class="text-sm font-semibold text-stone-800">51B Kumasi Crescent, Wuse 2, Abuja</p>
+                        </div>
+                    </div>
+
+                    <!-- Hours Card -->
+                    <div class="bg-white p-5 rounded-2xl border border-pink-200 flex items-center gap-4 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-pink-700 shrink-0">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase font-bold text-pink-800 tracking-wider">Opening Hours</p>
+                            <p class="text-sm font-semibold text-stone-800">Monday – Saturday: 10:00 AM – 4:00 PM</p>
+                            <p class="text-xs text-pink-600 font-medium">(Closed on Sundays)</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone / WhatsApp -->
+                    <div class="bg-white p-5 rounded-2xl border border-pink-200 flex items-center gap-4 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-pink-700 shrink-0">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase font-bold text-pink-800 tracking-wider">Phone & WhatsApp</p>
+                            <a href="tel:+2347045524637" class="text-sm font-semibold text-stone-800 hover:text-pink-600 transition-colors">+234 704 552 4637</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Handles -->
+                <div class="pt-2 flex flex-wrap gap-4 text-sm font-bold text-pink-900">
+                    <a href="https://instagram.com/jamelia_aesthetics" target="_blank" class="bg-white px-4 py-2 rounded-full border border-pink-200 flex items-center gap-2 hover:bg-pink-50 transition-colors shadow-sm">
+                        <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i> @jamelia_aesthetics
+                    </a>
+                    <a href="https://tiktok.com/@jamelia_aesthetics" target="_blank" class="bg-white px-4 py-2 rounded-full border border-pink-200 flex items-center gap-2 hover:bg-pink-50 transition-colors shadow-sm">
+                        <i data-lucide="video" class="w-4 h-4 text-pink-600"></i> TikTok
+                    </a>
+                </div>
+            </div>
+
+            <!-- Booking / Consultation Form -->
+            <div id="booking" class="bg-white p-8 lg:p-10 rounded-3xl shadow-xl border border-pink-200 relative pink-glow">
+                <h3 class="text-2xl font-serif font-bold text-pink-900 mb-1">Book Your Appointment</h3>
+                <p class="text-xs text-stone-500 mb-6">Fill out your details below and our team will get in touch to confirm your consultation slot.</p>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Full Name</label>
+                        <input type="text" placeholder="Jane Doe" class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Phone Number</label>
+                        <input type="tel" placeholder="+234..." class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-pink-900 uppercase tracking-wider mb-1">Desired Treatment</label>
+                        <select class="w-full px-4 py-3 text-sm rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-pink-50/30 text-stone-700">
+                            <option>Select a treatment...</option>
+                            <option>Anti-Wrinkle Treatment / Botox</option>
+                            <option>Lemon Bottle Fat Dissolving</option>
+                            <option>Tear Trough Filler</option>
+                            <option>Lip / Dermal Fillers</option>
+                            <option>Skin Rejuvenation</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-header-gradient text-white py-4 rounded-xl text-xs font-bold uppercase tracking-widest hover:opacity-95 shadow-lg transition-all">
+                        Request Appointment Slot
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-pink-200 py-12 border-t border-pink-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-pink-400/40 flex items-center justify-center bg-pink-800 text-white font-serif font-bold text-sm">
+                    JL
+                </div>
+                <div>
+                    <p class="text-xl font-cursive text-white leading-none">Jamelia Luxe Aesthetics</p>
+                    <p class="text-[10px] uppercase tracking-widest text-pink-300">Natural, Beautiful Results</p>
+                </div>
+            </div>
+            <p class="text-xs text-pink-300">© 2026 Jamelia Luxe Aesthetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
