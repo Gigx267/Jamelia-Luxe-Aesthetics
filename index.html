@@ -70,6 +70,12 @@
         }
         .animate-float { animation: floatSlow 6s ease-in-out infinite; }
         .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+
+        /* Equalizer Animation for Music Player */
+        @keyframes eqBar {
+            0%, 100% { height: 3px; }
+            50% { height: 12px; }
+        }
     </style>
 </head>
 <body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden">
@@ -273,31 +279,39 @@
         </div>
     </footer>
 
-    <!-- Optimized Floating Audio Player -->
-    <div id="audio-player-widget" class="fixed bottom-5 right-5 z-[9999] bg-pink-900/90 backdrop-blur-md text-white rounded-full p-2 pr-5 border border-pink-500/30 shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-105 group">
+    <!-- Redesigned Luxury Floating Audio Player -->
+    <div id="audio-player-widget" class="fixed bottom-6 right-6 z-[9999] bg-pink-950/80 backdrop-blur-xl text-white rounded-full p-2.5 pr-5 border border-pink-400/30 shadow-[0_10px_35px_rgba(209,41,97,0.35)] flex items-center gap-3.5 transition-all duration-500 hover:scale-[1.02] hover:border-pink-400/60 group select-none">
+        
         <audio id="bgMusic" loop>
-            <source src="Rihanna - Diamonds.mp3" type="audio/mpeg">
-            <source src="Rihanna - Diamonds.mp3" type="audio/ogg">
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/mpeg">
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/ogg">
         </audio>
 
-        <button id="audioToggleBtn" type="button" aria-label="Toggle Background Music" class="w-10 h-10 rounded-full bg-pink-600 hover:bg-pink-500 text-white flex items-center justify-center transition-colors shadow-inner focus:outline-none">
-            <i id="audioIcon" data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+        <!-- Play/Pause Circle Button -->
+        <button id="audioToggleBtn" type="button" aria-label="Toggle Background Music" class="relative w-11 h-11 rounded-full bg-gradient-to-tr from-pink-600 to-pink-500 text-white flex items-center justify-center transition-transform active:scale-95 shadow-md shadow-pink-900/50 focus:outline-none">
+            <!-- Ambient Ring Glow -->
+            <span class="absolute inset-0 rounded-full bg-pink-500/20 animate-ping opacity-75 pointer-events-none hidden" id="audioGlow"></span>
+            <i id="audioIcon" data-lucide="play" class="w-5 h-5 fill-current ml-0.5 relative z-10 transition-transform duration-200"></i>
         </button>
 
-        <div class="flex flex-col pr-1 cursor-pointer" id="audioDetails">
-            <div class="flex items-center gap-1.5">
-                <span class="text-[11px] font-bold tracking-wider uppercase text-pink-100">Ambient Music</span>
-                <div id="equalizer" class="hidden flex items-end gap-0.5 h-3">
-                    <span class="w-0.5 h-full bg-pink-300 animate-pulse"></span>
-                    <span class="w-0.5 h-2 bg-pink-300 animate-pulse delay-75"></span>
-                    <span class="w-0.5 h-3 bg-pink-300 animate-pulse delay-150"></span>
+        <!-- Track Details & Visualizer -->
+        <div class="flex flex-col cursor-pointer pr-1" id="audioDetails">
+            <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold tracking-widest uppercase text-pink-200/90 font-sans">Ambient Music</span>
+                
+                <!-- Animated Equalizer Waves -->
+                <div id="equalizer" class="hidden items-end gap-[2px] h-3">
+                    <span class="w-[2.5px] bg-pink-300 rounded-full animate-[eqBar_0.8s_ease-in-out_infinite]"></span>
+                    <span class="w-[2.5px] bg-pink-300 rounded-full animate-[eqBar_1.1s_ease-in-out_0.2s_infinite]"></span>
+                    <span class="w-[2.5px] bg-pink-300 rounded-full animate-[eqBar_0.6s_ease-in-out_0.4s_infinite]"></span>
                 </div>
             </div>
-            <span id="audioStatusText" class="text-[10px] text-pink-300 font-medium">Click to play ambient music</span>
+            <span id="audioStatusText" class="text-[11px] text-pink-100/70 font-medium truncate max-w-[130px] transition-colors group-hover:text-pink-100">Click to play track</span>
         </div>
 
-        <button id="closeAudioWidget" type="button" aria-label="Dismiss Player" class="text-pink-400 hover:text-white transition-colors ml-1 p-1">
-            <i data-lucide="x" class="w-4 h-4"></i>
+        <!-- Dismiss Button -->
+        <button id="closeAudioWidget" type="button" aria-label="Dismiss Player" class="text-pink-300/60 hover:text-white transition-colors ml-1 p-1.5 rounded-full hover:bg-pink-800/40 focus:outline-none">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>
     </div>
 
@@ -333,20 +347,25 @@
             const equalizer = document.getElementById('equalizer');
             const closeBtn = document.getElementById('closeAudioWidget');
             const widget = document.getElementById('audio-player-widget');
+            const audioGlow = document.getElementById('audioGlow');
 
             function updateUI(isPlaying) {
                 if (isPlaying) {
                     audioIcon.setAttribute('data-lucide', 'pause');
                     audioIcon.classList.remove('ml-0.5');
-                    statusText.textContent = 'Playing ambient track';
+                    statusText.textContent = 'A New Day Has Come';
+                    statusText.classList.add('text-pink-200');
                     equalizer.classList.remove('hidden');
                     equalizer.classList.add('flex');
+                    audioGlow.classList.remove('hidden');
                 } else {
                     audioIcon.setAttribute('data-lucide', 'play');
                     audioIcon.classList.add('ml-0.5');
                     statusText.textContent = 'Paused';
+                    statusText.classList.remove('text-pink-200');
                     equalizer.classList.add('hidden');
                     equalizer.classList.remove('flex');
+                    audioGlow.classList.add('hidden');
                 }
                 lucide.createIcons();
             }
@@ -379,8 +398,8 @@
 
             closeBtn.addEventListener('click', function() {
                 bgMusic.pause();
-                widget.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
-                setTimeout(() => widget.remove(), 300);
+                widget.classList.add('opacity-0', 'scale-90', 'pointer-events-none');
+                setTimeout(() => widget.remove(), 400);
             });
         });
     </script>
