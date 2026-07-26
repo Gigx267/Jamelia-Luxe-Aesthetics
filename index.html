@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -6,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamelia Luxe Aesthetics | Premier Medical Clinic Wuse 2, Abuja</title>
     <meta name="description" content="Elevate your natural beauty with premium non-surgical aesthetic treatments in Abuja. Botox, Dermal Fillers, Fat Dissolving, and Skin Rejuvenation in Wuse 2.">
-<!-- Standard SVG favicon (scalable, perfect for modern browsers) -->
-<link rel="icon" type="image/svg+xml" href="p (1).jpg">
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="p (1).jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="p (1).jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="p (1).jpg">
+    <link rel="manifest" href="/site.webmanifest">
 
-<!-- Fallback PNG for older desktop browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="p (1).jpg">
-
-<!-- Apple Touch Icon (for iOS home screen bookmarks) -->
-<link rel="apple-touch-icon" sizes="180x180" href="p (1).jpg">
-
-<!-- Web App Manifest (for Android / PWA support) -->
-<link rel="manifest" href="/site.webmanifest">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +52,7 @@
             }
         }
     </script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -77,13 +73,6 @@
     </style>
 </head>
 <body class="bg-pink-50 text-stone-800 font-sans antialiased selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden">
-
-    <!-- Background Music Player -->
-    <audio id="bgMusic" loop>
-        <source src="mmm (1).mp3" type="audio/mpeg">
-        <source src="mmm (1).mp3" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
 
     <!-- Top Announcement Bar -->
     <div class="bg-pink-900 text-pink-100 text-xs py-2.5 px-4 text-center font-medium tracking-wide border-b border-pink-800/50">
@@ -284,6 +273,34 @@
         </div>
     </footer>
 
+    <!-- Optimized Floating Audio Player -->
+    <div id="audio-player-widget" class="fixed bottom-5 right-5 z-[9999] bg-pink-900/90 backdrop-blur-md text-white rounded-full p-2 pr-5 border border-pink-500/30 shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-105 group">
+        <audio id="bgMusic" loop>
+            <source src="Rihanna - Diamonds.mp3" type="audio/mpeg">
+            <source src="Rihanna - Diamonds.mp3" type="audio/ogg">
+        </audio>
+
+        <button id="audioToggleBtn" type="button" aria-label="Toggle Background Music" class="w-10 h-10 rounded-full bg-pink-600 hover:bg-pink-500 text-white flex items-center justify-center transition-colors shadow-inner focus:outline-none">
+            <i id="audioIcon" data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+        </button>
+
+        <div class="flex flex-col pr-1 cursor-pointer" id="audioDetails">
+            <div class="flex items-center gap-1.5">
+                <span class="text-[11px] font-bold tracking-wider uppercase text-pink-100">Ambient Music</span>
+                <div id="equalizer" class="hidden flex items-end gap-0.5 h-3">
+                    <span class="w-0.5 h-full bg-pink-300 animate-pulse"></span>
+                    <span class="w-0.5 h-2 bg-pink-300 animate-pulse delay-75"></span>
+                    <span class="w-0.5 h-3 bg-pink-300 animate-pulse delay-150"></span>
+                </div>
+            </div>
+            <span id="audioStatusText" class="text-[10px] text-pink-300 font-medium">Click to play ambient music</span>
+        </div>
+
+        <button id="closeAudioWidget" type="button" aria-label="Dismiss Player" class="text-pink-400 hover:text-white transition-colors ml-1 p-1">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -298,7 +315,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle Functionality
+        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -307,52 +324,65 @@
         }
         btn.addEventListener('click', toggleMenu);
 
-        // Background Audio Handling
-        window.addEventListener('load', function() {
+        // Interactive Audio Controller
+        document.addEventListener('DOMContentLoaded', function() {
             const bgMusic = document.getElementById('bgMusic');
+            const toggleBtn = document.getElementById('audioToggleBtn');
+            const audioIcon = document.getElementById('audioIcon');
+            const statusText = document.getElementById('audioStatusText');
+            const equalizer = document.getElementById('equalizer');
+            const closeBtn = document.getElementById('closeAudioWidget');
+            const widget = document.getElementById('audio-player-widget');
+
+            function updateUI(isPlaying) {
+                if (isPlaying) {
+                    audioIcon.setAttribute('data-lucide', 'pause');
+                    audioIcon.classList.remove('ml-0.5');
+                    statusText.textContent = 'Playing ambient track';
+                    equalizer.classList.remove('hidden');
+                    equalizer.classList.add('flex');
+                } else {
+                    audioIcon.setAttribute('data-lucide', 'play');
+                    audioIcon.classList.add('ml-0.5');
+                    statusText.textContent = 'Paused';
+                    equalizer.classList.add('hidden');
+                    equalizer.classList.remove('flex');
+                }
+                lucide.createIcons();
+            }
+
+            function toggleAudio() {
+                if (bgMusic.paused) {
+                    bgMusic.play().then(() => {
+                        updateUI(true);
+                    }).catch(error => {
+                        console.log("Audio play blocked by browser policy:", error);
+                    });
+                } else {
+                    bgMusic.pause();
+                    updateUI(false);
+                }
+            }
+
+            // Autoplay Attempt
             const playPromise = bgMusic.play();
-            
             if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("Autoplay prevented:", error);
-                    createMusicControls();
+                playPromise.then(() => {
+                    updateUI(true);
+                }).catch(() => {
+                    updateUI(false);
                 });
             }
+
+            toggleBtn.addEventListener('click', toggleAudio);
+            document.getElementById('audioDetails').addEventListener('click', toggleAudio);
+
+            closeBtn.addEventListener('click', function() {
+                bgMusic.pause();
+                widget.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+                setTimeout(() => widget.remove(), 300);
+            });
         });
-
-        function createMusicControls() {
-            if (document.getElementById('music-controls')) return;
-
-            const musicControls = document.createElement('div');
-            musicControls.id = 'music-controls';
-            musicControls.innerHTML = `
-                <button id="playMusicBtn" class="bg-pink-900 text-pink-100 text-xs py-2 px-3 rounded border border-pink-400 mr-2 hover:bg-pink-800">▶ Play Audio</button>
-                <button id="muteMusicBtn" class="text-pink-300 text-xs hover:text-white">Close</button>
-            `;
-            musicControls.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                z-index: 10000;
-                background: rgba(94, 11, 41, 0.95);
-                padding: 10px 14px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                display: flex;
-                align-items: center;
-            `;
-            
-            document.body.appendChild(musicControls);
-            
-            document.getElementById('playMusicBtn').addEventListener('click', function() {
-                document.getElementById('bgMusic').play();
-                musicControls.style.display = 'none';
-            });
-            
-            document.getElementById('muteMusicBtn').addEventListener('click', function() {
-                musicControls.style.display = 'none';
-            });
-        }
     </script>
 </body>
 </html>
