@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services & Treatments | Jamelia Luxe Aesthetics Abuja</title>
     <meta name="description" content="Explore our aesthetic procedures in Wuse 2, Abuja. Premium anti-wrinkle treatments, dermal fillers, skin boosters, fat dissolving, and tailored aesthetic care.">
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="p (1).jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="p (1).jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="p (1).jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +51,7 @@
             }
         }
     </script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -332,6 +338,34 @@
         </div>
     </footer>
 
+    <!-- Optimized Floating Audio Player -->
+    <div id="audio-player-widget" class="fixed bottom-5 right-5 z-[9999] bg-pink-900/90 backdrop-blur-md text-white rounded-full p-2 pr-5 border border-pink-500/30 shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-105 group">
+        <audio id="bgMusic" loop>
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/mpeg">
+            <source src="Céline Dion - A New Day Has Come (Official HD Video).mp3" type="audio/ogg">
+        </audio>
+
+        <button id="audioToggleBtn" type="button" aria-label="Toggle Background Music" class="w-10 h-10 rounded-full bg-pink-600 hover:bg-pink-500 text-white flex items-center justify-center transition-colors shadow-inner focus:outline-none">
+            <i id="audioIcon" data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+        </button>
+
+        <div class="flex flex-col pr-1 cursor-pointer" id="audioDetails">
+            <div class="flex items-center gap-1.5">
+                <span class="text-[11px] font-bold tracking-wider uppercase text-pink-100">Ambient Music</span>
+                <div id="equalizer" class="hidden flex items-end gap-0.5 h-3">
+                    <span class="w-0.5 h-full bg-pink-300 animate-pulse"></span>
+                    <span class="w-0.5 h-2 bg-pink-300 animate-pulse delay-75"></span>
+                    <span class="w-0.5 h-3 bg-pink-300 animate-pulse delay-150"></span>
+                </div>
+            </div>
+            <span id="audioStatusText" class="text-[10px] text-pink-300 font-medium">Click to play ambient music</span>
+        </div>
+
+        <button id="closeAudioWidget" type="button" aria-label="Dismiss Player" class="text-pink-400 hover:text-white transition-colors ml-1 p-1">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -355,6 +389,66 @@
         }
 
         btn.addEventListener('click', toggleMenu);
+
+        // Interactive Audio Controller
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            const toggleBtn = document.getElementById('audioToggleBtn');
+            const audioIcon = document.getElementById('audioIcon');
+            const statusText = document.getElementById('audioStatusText');
+            const equalizer = document.getElementById('equalizer');
+            const closeBtn = document.getElementById('closeAudioWidget');
+            const widget = document.getElementById('audio-player-widget');
+
+            function updateUI(isPlaying) {
+                if (isPlaying) {
+                    audioIcon.setAttribute('data-lucide', 'pause');
+                    audioIcon.classList.remove('ml-0.5');
+                    statusText.textContent = 'Playing ambient track';
+                    equalizer.classList.remove('hidden');
+                    equalizer.classList.add('flex');
+                } else {
+                    audioIcon.setAttribute('data-lucide', 'play');
+                    audioIcon.classList.add('ml-0.5');
+                    statusText.textContent = 'Paused';
+                    equalizer.classList.add('hidden');
+                    equalizer.classList.remove('flex');
+                }
+                lucide.createIcons();
+            }
+
+            function toggleAudio() {
+                if (bgMusic.paused) {
+                    bgMusic.play().then(() => {
+                        updateUI(true);
+                    }).catch(error => {
+                        console.log("Audio play blocked by browser policy:", error);
+                    });
+                } else {
+                    bgMusic.pause();
+                    updateUI(false);
+                }
+            }
+
+            // Autoplay Attempt
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    updateUI(true);
+                }).catch(() => {
+                    updateUI(false);
+                });
+            }
+
+            toggleBtn.addEventListener('click', toggleAudio);
+            document.getElementById('audioDetails').addEventListener('click', toggleAudio);
+
+            closeBtn.addEventListener('click', function() {
+                bgMusic.pause();
+                widget.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+                setTimeout(() => widget.remove(), 300);
+            });
+        });
     </script>
 </body>
 </html>
