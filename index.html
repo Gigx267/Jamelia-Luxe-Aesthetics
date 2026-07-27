@@ -71,7 +71,6 @@
         .animate-float { animation: floatSlow 6s ease-in-out infinite; }
         .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
 
-        /* Equalizer Animation for Music Player */
         @keyframes eqBar {
             0%, 100% { height: 3px; }
             50% { height: 12px; }
@@ -85,14 +84,17 @@
         ✨ <span>51B Kumasi Crescent, Wuse 2, Abuja</span> &nbsp;|&nbsp; 📞 <a href="tel:+2347045524637" class="underline hover:text-white transition-colors">+234 704 552 4637</a>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header with Image Logo Integration -->
     <header class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
             
-            <!-- Brand Logo -->
+            <!-- Brand Logo with Image Option -->
             <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full border border-pink-300 flex items-center justify-center bg-pink-50 text-pink-700 font-serif font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
-                    JL
+                <!-- Replace 'logo.jpg' with your actual logo file name/path -->
+                <div class="w-11 h-11 rounded-full border border-pink-300 flex items-center justify-center bg-pink-50 overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
+                    <img src="https://github.com/Gigx267/Jamelia-Luxe-Aesthetics/blob/main/Jamelia%20Aesthetic%20logo%20.PNG?raw=true" alt="Jamelia Luxe Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback monogram text if image fails to load -->
+                    <span class="hidden w-full h-full items-center justify-center text-pink-700 font-serif font-bold text-sm bg-pink-100">JL</span>
                 </div>
                 <div class="flex flex-col">
                     <span class="text-2xl font-cursive text-pink-700 font-bold leading-none">Jamelia</span>
@@ -289,7 +291,6 @@
 
         <!-- Play/Pause Circle Button -->
         <button id="audioToggleBtn" type="button" aria-label="Toggle Background Music" class="relative w-11 h-11 rounded-full bg-gradient-to-tr from-pink-600 to-pink-500 text-white flex items-center justify-center transition-transform active:scale-95 shadow-md shadow-pink-900/50 focus:outline-none">
-            <!-- Ambient Ring Glow -->
             <span class="absolute inset-0 rounded-full bg-pink-500/20 animate-ping opacity-75 pointer-events-none hidden" id="audioGlow"></span>
             <i id="audioIcon" data-lucide="play" class="w-5 h-5 fill-current ml-0.5 relative z-10 transition-transform duration-200"></i>
         </button>
@@ -299,7 +300,6 @@
             <div class="flex items-center gap-2">
                 <span class="text-[10px] font-bold tracking-widest uppercase text-pink-200/90 font-sans">Ambient Music</span>
                 
-                <!-- Animated Equalizer Waves -->
                 <div id="equalizer" class="hidden items-end gap-[2px] h-3">
                     <span class="w-[2.5px] bg-pink-300 rounded-full animate-[eqBar_0.8s_ease-in-out_infinite]"></span>
                     <span class="w-[2.5px] bg-pink-300 rounded-full animate-[eqBar_1.1s_ease-in-out_0.2s_infinite]"></span>
@@ -318,7 +318,6 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS animations
         AOS.init({
             duration: 800,
             easing: 'ease-out-cubic',
@@ -326,10 +325,8 @@
             offset: 80,
         });
 
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -338,7 +335,6 @@
         }
         btn.addEventListener('click', toggleMenu);
 
-        // Interactive Audio Controller
         document.addEventListener('DOMContentLoaded', function() {
             const bgMusic = document.getElementById('bgMusic');
             const toggleBtn = document.getElementById('audioToggleBtn');
@@ -383,7 +379,6 @@
                 }
             }
 
-            // Autoplay Attempt
             const playPromise = bgMusic.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
